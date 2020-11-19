@@ -1,0 +1,75 @@
+button:focus {
+    outline: none;
+}
+
+body {
+    background: url("../images/body-bg-full.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.imageuser {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+
+.left-panal {
+    width: 95%;
+    height: 90vh;
+    background: transparent;
+    margin-top: 5vh;
+    margin-left: 5%;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.main-panal {
+    width: 98%;
+    height: 90vh;
+    background: whitesmoke;
+    margin-top: 5vh;
+    margin-right: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.panal {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.image {
+    text-align: center;
+}
+
+.profile-image {
+    margin-top: 25px;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.l-pnl-btn {
+    margin-top: 10px;
+    width: 90%;
+    height: 55px;
+
+}
+.l-pnl-btn:hover {
+    background-color: #1b1e21;
+    color: white;
+    border-radius: 20px 0px 0px 25px;
+
+}
+
+.btn-custom {
+    border: transparent;
+    color: white;
+    background: none;
+}
+
+.btn-custom-selected {
+    background: whitesmoke;
+    color: black;
+    border-radius: 20px 0px 0px 25px;
+}

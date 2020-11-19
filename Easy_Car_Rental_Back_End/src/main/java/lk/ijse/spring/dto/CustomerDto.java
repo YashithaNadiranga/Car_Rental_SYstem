@@ -1,12 +1,11 @@
 package lk.ijse.spring.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class CustomerDto {
     private String customerID;
     private String name;

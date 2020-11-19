@@ -3,7 +3,6 @@ let array = ['#btn-home','#btn-car','#btn-rent','#btn-repair','#btn-payment'];
 $('#btn-home').click(()=>{
     setClass();
     $('#btn-home').addClass('btn-custom-selected');
-    console.log("hello")
 });
 
 $('#btn-car').click(()=>{

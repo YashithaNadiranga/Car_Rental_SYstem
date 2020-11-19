@@ -27,6 +27,12 @@ public class CustomerController {
     CustomerService customerService;
 
 
+    @GetMapping("/get")
+    public String getCust(){
+        return "hello Cust";
+    }
+
+
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity addCustomer(@RequestBody CustomerDto dto) {
         dto.setPassword(hashPassword(dto.getPassword()));
