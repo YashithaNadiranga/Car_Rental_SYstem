@@ -1,3 +1,5 @@
+//=========================Left Panal Button Select========================
+
 let btnarray = ['#btn-home','#btn-customers','#btn-cars','#btn-orders','#btn-payments'];
 
 function setClass() {
@@ -9,6 +11,7 @@ function setClass() {
 $('#btn-home').click(()=>{
     setClass();
     $('#btn-home').addClass('btn-custom-selected');
+
 });
 
 $('#btn-customers').click(()=>{
@@ -30,3 +33,7 @@ $('#btn-payments').click(()=>{
     setClass();
     $('#btn-payments').addClass('btn-custom-selected');
 });
+
+//===============left panal button selected end======================
+
+//================left panal button hover start======================
