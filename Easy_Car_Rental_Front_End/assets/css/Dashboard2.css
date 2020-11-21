@@ -18,11 +18,11 @@ body {
 
 .left-panal {
     width: 95%;
-    height: 90vh;
+    height: 88vh;
     background: transparent;
     margin-top: 5vh;
     margin-left: 5%;
-    border-radius: 15px 15px 15px 15px;
+    /*border-radius: 15px 15px 15px 15px;*/
 }
 
 .main-panal {
@@ -36,6 +36,10 @@ body {
 }
 
 .main-panal::-webkit-scrollbar {
+    display: none;
+}
+
+.left-panal::-webkit-scrollbar {
     display: none;
 }
 
@@ -89,3 +93,4 @@ body {
 
 
 }
+

@@ -1,0 +1,74 @@
+button:focus{
+    outline: none;
+}
+
+.card-caro{
+    position: relative;
+    color: white;
+    left: 50px;
+    top: -100px;
+    width: 350px;
+    height: 300px;
+
+}
+.book-button{
+    border: hidden;
+    background: rgb(255, 102, 0);
+    height: 50px;
+    width: 200px;
+    color: white;
+}
+
+.book-button:hover{
+    border: solid;
+    border-color: rgb(255, 102, 0);
+    background:transparent ;
+    height: 50px;
+    width: 200px;
+    color: white;
+}
+
+.box{
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    top: -150px;
+    width: 80%;
+    height: 200px;
+    background: rgb(255, 102, 0);
+}
+.header{
+    color: white;
+    text-align: center;
+}
+.log-button{
+    border: hidden;
+    background: white;
+    height: 50px;
+    width: 200px;
+    color: black;
+}
+
+.log-button:hover{
+    border: solid;
+    border-color: white ;
+    background:transparent ;
+    height: 50px;
+    width: 200px;
+    color: white;
+}
+
+.about{
+    width: 100%;
+    height: auto;
+    margin-top: -20%;
+    background: whitesmoke;
+
+}
+.cars-content{
+    margin-top: 12%;
+}
+
+.card{
+    margin-bottom: 10px;
+}
