@@ -1,29 +1,19 @@
-package lk.ijse.spring.entity;
+package lk.ijse.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
-@Entity
-public class Driver {
-    @Id
+public class DriverDto {
     private String driverID;
     private String name;
     private String contactNo;
     private String nic;
     private String userName;
     private String password;
-
-    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-    List<lk.ijse.spring.entity.Booking> bookings = new ArrayList<>();
-
 }

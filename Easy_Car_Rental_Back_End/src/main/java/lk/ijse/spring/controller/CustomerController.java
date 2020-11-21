@@ -1,9 +1,11 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDto;
+import lk.ijse.spring.dto.DriverDto;
 import lk.ijse.spring.dto.LoginDto;
 import lk.ijse.spring.dto.RegistrationDto;
 import lk.ijse.spring.service.CustomerService;
+import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.service.LoginService;
 import lk.ijse.spring.service.impl.CustomerServiceImpl;
 import lk.ijse.spring.util.StandardResponse;
@@ -26,11 +28,8 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-
-    @GetMapping("/get")
-    public String getCust(){
-        return "hello Cust";
-    }
+    @Autowired
+    DriverService driverService;
 
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
@@ -41,19 +40,34 @@ public class CustomerController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
-    @GetMapping(headers = {"Content-Type=application/json","Accept=application/json"})
-    public ResponseEntity login(){
-        StandardResponse response = new StandardResponse(200, "Success", null);
-        return new ResponseEntity(response, HttpStatus.CREATED);
+    @GetMapping(path = "/{userName}/{password}")
+    public ResponseEntity login(@PathVariable("userName") String val1, @PathVariable("password") String val2){
+        val2 = hashPassword(val2);
+        CustomerDto customerDto = customerService.login(val1, val2);
+        if(customerDto != null){
+            customerDto.setPassword("");
+            StandardResponse response = new StandardResponse(200, "customer", customerDto);
+            return new ResponseEntity(response, HttpStatus.OK);
+        }else{
+            DriverDto driverDto = driverService.login(val1, val2);
+            if (driverDto != null){
+                driverDto.setPassword("");
+                StandardResponse response = new StandardResponse(200, "driver", driverDto);
+                return new ResponseEntity(response, HttpStatus.OK);
+            }else{
+                StandardResponse response = new StandardResponse(200, "admin", null);
+                return new ResponseEntity(response, HttpStatus.OK);
+            }
+        }
     }
 
     @DeleteMapping(params = {"id"})
     public ResponseEntity deleteCustomer(@RequestParam String id) {
         customerService.deleteCustomer(id);
-        return new ResponseEntity(new StandardResponse(200, "Success", null), HttpStatus.CREATED);
+        return new ResponseEntity(new StandardResponse(200, "Success", null), HttpStatus.OK);
     }
 
-    @PutMapping
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity updateCustomer(@RequestBody CustomerDto dto) {
         customerService.updateCustomer(dto);
         return new ResponseEntity(new StandardResponse(200, "Success", null), HttpStatus.OK);
@@ -65,7 +79,7 @@ public class CustomerController {
         return new ResponseEntity(new StandardResponse(200, "Success", customerDTO), HttpStatus.OK);
     }
 
-
+    @GetMapping
     public ResponseEntity getAllCustomers() {
         List<CustomerDto> allCustomers = customerService.getAllCustomer();
         return new ResponseEntity(new StandardResponse(200, "Success", allCustomers), HttpStatus.OK);

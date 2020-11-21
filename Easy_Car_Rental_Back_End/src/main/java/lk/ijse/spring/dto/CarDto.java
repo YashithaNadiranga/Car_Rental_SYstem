@@ -1,19 +1,15 @@
-package lk.ijse.spring.entity;
+package lk.ijse.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-public class Car {
-    @Id
+@ToString
+public class CarDto {
     private String carID;
     private String Brand;
     private String Type;
@@ -27,12 +23,4 @@ public class Car {
     private double monthlyRate;
     private double freeMillagePrice;
     private String freeMillageDuration;
-
-    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
-    private List<Booking> bookings = new ArrayList<>();
-
-    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
-    private List<Maintainance> maintainances = new ArrayList<>();
-
-
 }

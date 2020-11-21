@@ -20,6 +20,10 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(basePackageClasses = CustomerRepo.class)
 @EnableTransactionManagement
 public class JPAConfig {
+    //local container entity manager factory bean
+    //datasource // url password username
+    //jpavendoradapter
+    //platform transaction manager
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter va){

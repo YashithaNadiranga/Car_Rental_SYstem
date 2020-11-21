@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,8 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void updateCustomer(CustomerDto dto) {
         if (repo.existsById(dto.getCustomerID())) {
-            Customer c = mapper.map(dto, Customer.class);
-            repo.save(c);
+            repo.save(mapper.map(dto, Customer.class));
         } else {
             throw new RuntimeException("No such customer for update..!");
         }
@@ -82,6 +80,15 @@ public class CustomerServiceImpl implements CustomerService {
         }else{
             return "C001";
         }
+    }
+
+    @Override
+    public CustomerDto login(String userName, String password) {
+        Customer customer = repo.login(userName, password);
+        if (customer == null){
+            return null;
+        }
+        return mapper.map(customer,CustomerDto.class);
     }
 
 

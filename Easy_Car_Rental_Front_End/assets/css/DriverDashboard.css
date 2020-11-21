@@ -2,11 +2,13 @@ button:focus {
     outline: none;
 }
 
+
 body {
-    background: url("../images/body-bg-full.png");
+    margin-bottom: 0;
+    background:url("../images/body-bg-full dri.png");
+    background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
 }
 
 .imageuser {

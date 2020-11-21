@@ -29,8 +29,8 @@
                 <div class="card-body">
                     <div class="form-group row">
                         <div class="col-12">
-                            <input type="email" class="form-control form-control-lg" id="email"
-                                   placeholder="Email address">
+                            <input type="text" class="form-control form-control-lg" id="uname"
+                                   placeholder="User Name">
                         </div>
                     </div>
 
@@ -68,6 +68,18 @@
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
+                                    <label for="inputUserName">Username</label>
+                                    <input type="text" class="form-control" id="inputUserName"
+                                           placeholder="yashitha">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="number" class="form-control" id="inputPassword"
+                                           placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                                     <label for="inputName">Name</label>
                                     <input type="text" class="form-control" id="inputName"
                                            placeholder="Yashitha Nadiranga">
@@ -83,21 +95,16 @@
                                 <input type="text" class="form-control" id="inputAddress"
                                        placeholder="Kananwila,Horana">
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4"
-                                           placeholder="Password">
-                                </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                             </div>
+
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputDribingLicence">Driving Licence No</label>
-                                    <input type="number" class="form-control" id="inputDribingLicence"
+                                    <label for="inputDrivingLicence">Driving Licence No</label>
+                                    <input type="number" class="form-control" id="inputDrivingLicence"
                                            placeholder="">
                                 </div>
 
@@ -113,7 +120,8 @@
                                     <span class="input-group-text" id="inputGroupFileAddon01">Upload NIC (Front)</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                           aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
                             </div>
@@ -123,7 +131,8 @@
                                     <span class="input-group-text" id="inputGroupFileAddon02">Upload NIC (Back)</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon02">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                           aria-describedby="inputGroupFileAddon02">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
                             </div>
@@ -135,7 +144,7 @@
                     </div>
                     <div class="modal-footer">
                         <div style="width: 100%; text-align: center">
-                            <button type="button" class="btn btn-success ">Create Account</button>
+                            <button type="button" class="btn btn-success" id="btncreate">Create Account</button>
                         </div>
                     </div>
                 </div>
@@ -152,5 +161,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/login.js"></script>
 </body>
 </html>

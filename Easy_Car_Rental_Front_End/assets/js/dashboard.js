@@ -27,7 +27,7 @@ $('#btn-payment').click(()=>{
 
 
 function setClass() {
-    for(id in array){
+    for(let id in array){
         $(array[id]).removeClass('btn-custom-selected').addClass('btn-custom');
     }
 }
