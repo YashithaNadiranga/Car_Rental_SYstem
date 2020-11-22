@@ -15,15 +15,18 @@
         <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 panal">
             <div class="left-panal" style="overflow:auto">
                 <div class="image">
-                    <img class="profile-image" src="assets/images/12.png" alt="">
+                    <img class="profile-image" src="assets/images/users.png" alt="">
                     <br>
+                    <p class="username">User Name</p>
                 </div>
                 <div style="text-align: right; width: 100%">
-                    <button class="btn-hover l-pnl-btn btn-custom btn-custom-selected" id="btn-home">Home</button>
+                    <button class="btn-hover l-pnl-btn btn-custom btn-custom-selected" id="btn-home">Dashboard</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-customers">Customers</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-cars">Cars</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-orders">Orders</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-payments">Payments</button>
+                    <button class="btn-hover l-pnl-btn btn-custom" id="btn-reports">Reports</button>
+                    <button class="btn-hover l-pnl-btn btn-custom" id="btn-drivers">Drivers</button>
                 </div>
             </div>
         </div>
@@ -32,32 +35,152 @@
             <div class="main-panal" style="overflow:auto">
                 <div class="container-fluid">
 
-                    <div class="row ml-0 mr-0 mt-2">
-                        <div class="card mb-3 card-shadow">
-                            <div class="card-body">
-                                <h5 class="card-title" style="text-align: center">Admin dashboard</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="card mb-5 card-shadow" style="height: 300px">
-                                <div class="card-body">
+                    <div id="Dashboard">
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="card mb-3 card-shadow">
+                                <div class="card-body card-height">
                                     <h5 class="card-title" style="text-align: center">Admin dashboard</h5>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="card mb-5 card-shadow" style="height: 300px">
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center">Admin dashboard</h5>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <div class="card mb-5 card-shadow" style="height: 300px">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="text-align: center">Customers</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <div class="card mb-5 card-shadow" style="height: 300px">
+                                    <div class="card-body card-height">
+                                        <h5 class="card-title" style="text-align: center">Drivers</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
+                    <div id="Customers">
+                        <div class="row ml-0 mr-0 mt-1">
+                            <div class="card mb-2 card-shadow ">
+                                <div class="card-body card-height">
+                                    <h5 class="card-title" style="text-align: center">Admin dashboard - Customers</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-box" style="height: 300px; overflow: no-display">
+                            <div class="table-responsive-lg">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Nic No</th>
+                                        <th scope="col">Driving Licence No</th>
+                                        <th scope="col">View Driving Licence</th>
+                                        <th scope="col">View NIC</th>
+                                        <th scope="col">Verify</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">C001</th>
+                                        <td>Yashitha Nadiranga</td>
+                                        <td>200025001088</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <button class="btn btn-secondary">View</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-secondary">View</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success">Verify</button>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="search-box">
+                                <div class="form-inline">
+                                    <input type="text" class="form-control" id="searchcustomer"
+                                           style="margin-right: 10px">
+                                    <button class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="table-box" style="height: 300px; overflow: no-display">
+                                <div class="table-responsive-lg">
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">User Name</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Nic No</th>
+                                            <th scope="col">Driving Licence No</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Contact No</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">C001</th>
+                                            <td>Yashitha Nadiranga</td>
+                                            <td>200025001088</td>
+                                            <td>123456789</td>
+                                            <td>123456789</td>
+                                            <td>123456789</td>
+                                            <td>123456789</td>
+                                            <td>123456789</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="btn-bottom">
+                                <button type="button" class="btn btn-primary">Add</button>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-secondary">Clear</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="Cars">
+
+                    </div>
+
+                    <div id="Orders">
+
+                    </div>
+
+                    <div id="Payments">
+
+                    </div>
+
+                    <div id="Reports">
+
+                    </div>
+
+                    <div id="Drivers">
+
+                    </div>
                 </div>
             </div>
         </div>

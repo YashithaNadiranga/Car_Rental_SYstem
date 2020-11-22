@@ -1,7 +1,6 @@
 //=========================Left Panal Button Select========================
 
-let btnarray = ['#btn-home','#btn-customers','#btn-cars','#btn-orders','#btn-payments'];
-
+let btnarray = ['#btn-home','#btn-customers','#btn-cars','#btn-orders','#btn-payments','#btn-reports','#btn-drivers'];
 function setClass() {
     for (id in btnarray) {
         $(btnarray[id]).removeClass('btn-custom-selected').addClass('btn-custom');
@@ -9,14 +8,19 @@ function setClass() {
 }
 
 $('#btn-home').click(()=>{
+    hideall();
     setClass();
     $('#btn-home').addClass('btn-custom-selected');
+    $('#Dashboard').show();
 
 });
 
 $('#btn-customers').click(()=>{
+    hideall();
     setClass();
     $('#btn-customers').addClass('btn-custom-selected');
+    $('#Customers').show();
+
 });
 
 $('#btn-cars').click(()=>{
@@ -34,6 +38,24 @@ $('#btn-payments').click(()=>{
     $('#btn-payments').addClass('btn-custom-selected');
 });
 
-//===============left panal button selected end======================
+$('#btn-reports').click(()=>{
+    setClass();
+    $('#btn-reports').addClass('btn-custom-selected');
 
-//================left panal button hover start======================
+});
+
+$('#btn-drivers').click(()=>{
+    setClass();
+    $('#btn-drivers').addClass('btn-custom-selected');
+
+});
+
+let hide = ['#Dashboard','#Customers'];
+
+function hideall(){
+    for (let i in hide) {
+        $(hide[i]).hide();
+    }
+
+}
+

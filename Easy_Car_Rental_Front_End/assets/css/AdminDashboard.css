@@ -1,3 +1,14 @@
+
+/*Loading*/
+
+#Customers{
+    display: none;
+}
+
+
+/*Loading*/
+
+
 button:focus {
     outline: none;
 }
@@ -11,11 +22,11 @@ body {
 
 }
 
-.imageuser {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-
+.username{
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 18px;
 }
 
 .left-panal {
@@ -64,6 +75,7 @@ body {
     margin-top: 10px;
     width: 90%;
     height: 55px;
+    font-weight: bold;
 
 }
 
@@ -96,3 +108,24 @@ body {
 
 }
 
+/*Customer*/
+
+.table-box{
+    width: 100%;
+    height: 300px;
+}
+
+.search-box{
+    width: 100%;
+    text-align: right;
+
+}
+.btn-bottom{
+    text-align: right;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.card-height{
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
