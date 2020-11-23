@@ -17,7 +17,7 @@
                 <div class="image">
                     <img class="profile-image" src="assets/images/users.png" alt="">
                     <br>
-                    <p class="username">User Name</p>
+                    <p class="username">Admin</p>
                 </div>
                 <div style="text-align: right; width: 100%">
                     <button class="btn-hover l-pnl-btn btn-custom btn-custom-selected" id="btn-home">Dashboard</button>
@@ -45,18 +45,95 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                <div class="card mb-5 card-shadow" style="height: 300px">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                <div class="card mb-5 card-shadow" style="height: 300px; overflow: auto">
                                     <div class="card-body">
-                                        <h5 class="card-title" style="text-align: center">Customers</h5>
+                                        <div class="cust-dash card-height">
+                                            <h5 class="card-title">Customers</h5>
+                                        </div>
+
+                                        <div class="row ml-0 mr-0 mt-3">
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card" style="background: #FF7034 ">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>No Of Customers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card" style="background: #FE4B4B">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Non Verified Customers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card-2" style="background: #08AD6A">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Verified Customers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="banner-card-2" style="margin-top: 10px;background: #CD4040">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Rejected Customers</pa>
+                                                        <h3 style="bottom: 3px">0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                <div class="card mb-5 card-shadow" style="height: 300px">
-                                    <div class="card-body card-height">
-                                        <h5 class="card-title" style="text-align: center">Drivers</h5>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                <div class="card mb-5 card-shadow" style="height: 300px; overflow: auto">
+                                    <div class="card-body">
+                                        <div class="cust-dash card-height">
+                                            <h5 class="card-title">Drivers</h5>
+                                        </div>
+
+                                        <div class="row ml-0 mr-0 mt-3">
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card" style="background: #FE4B4B">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>No Of Drivers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card-2" style="background: #08AD6A">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Verified Drivers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="banner-card-2"
+                                                     style="margin-top: 10px ;background: #CD4040">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Rejected Drivers</pa>
+                                                        <h3 style="bottom: 3px">0</h3>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-4 com-lh-4 col-xl-4">
+                                                <div class="banner-card" style="background: #F8D609">
+                                                    <div style="margin-left: 10px">
+                                                        <pa>Non Verified Drivers</pa>
+                                                        <h3>0</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -73,9 +150,9 @@
                             </div>
                         </div>
 
-                        <div class="table-box" style="height: 300px; overflow: no-display">
+                        <div class="table-box" style="height: 250px; overflow: no-display">
                             <div class="table-responsive-lg">
-                                <table class="table">
+                                <table class="table table-hover">
                                     <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">ID</th>
@@ -87,22 +164,7 @@
                                         <th scope="col">Verify</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">C001</th>
-                                        <td>Yashitha Nadiranga</td>
-                                        <td>200025001088</td>
-                                        <td>123456789</td>
-                                        <td>
-                                            <button class="btn btn-secondary">View</button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-secondary">View</button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-success">Verify</button>
-                                        </td>
-                                    </tr>
+                                    <tbody id="tblCusBody">
 
                                     </tbody>
                                 </table>
@@ -112,7 +174,7 @@
 
                         <div class="row ml-0 mr-0 mt-2">
                             <div class="search-box">
-                                <div class="form-inline">
+                                <div class="form-inline" style="display: block">
                                     <input type="text" class="form-control" id="searchcustomer"
                                            style="margin-right: 10px">
                                     <button class="btn btn-primary">Search</button>
@@ -120,9 +182,9 @@
                             </div>
                         </div>
                         <div class="row ml-0 mr-0 mt-2">
-                            <div class="table-box" style="height: 300px; overflow: no-display">
+                            <div class="table-box" style="height: 250px; overflow: no-display">
                                 <div class="table-responsive-lg">
-                                    <table class="table">
+                                    <table class="table table-hover">
                                         <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">ID</th>
@@ -135,35 +197,258 @@
                                             <th scope="col">Contact No</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">C001</th>
-                                            <td>Yashitha Nadiranga</td>
-                                            <td>200025001088</td>
-                                            <td>123456789</td>
-                                            <td>123456789</td>
-                                            <td>123456789</td>
-                                            <td>123456789</td>
-                                            <td>123456789</td>
-                                        </tr>
+                                        <tbody id="tblCusAllBody">
 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="btn-bottom">
-                                <button type="button" class="btn btn-primary">Add</button>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModalCenter" id="customerAdd">Add</button>
                                 <button type="button" class="btn btn-success">Update</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                                 <button type="button" class="btn btn-secondary">Clear</button>
+                            </div>
+
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputUserName">Username</label>
+                                                        <input type="text" class="form-control" id="inputUserName"
+                                                               placeholder="yashitha" required>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputPassword">Password</label>
+                                                        <input type="password" class="form-control" id="inputPassword"
+                                                               placeholder="" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputName">Name</label>
+                                                        <input type="text" class="form-control" id="inputName"
+                                                               placeholder="Yashitha Nadiranga" required>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputContactNo">Contact No</label>
+                                                        <input type="number" class="form-control" id="inputContactNo"
+                                                               placeholder="0763437189" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputAddress">Address</label>
+                                                    <input type="text" class="form-control" id="inputAddress"
+                                                           placeholder="Kananwila,Horana" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="inputEmail">Email</label>
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputDrivingLicence">Driving Licence No</label>
+                                                        <input type="number" class="form-control" id="inputDrivingLicence"
+                                                               placeholder="" required>
+                                                    </div>
+
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputNIC">NIC No</label>
+                                                        <input type="number" class="form-control" id="inputNIC"
+                                                               placeholder="" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload NIC (Front)</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                               aria-describedby="inputGroupFileAddon01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="inputGroupFileAddon02">Upload NIC (Back)</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                                               aria-describedby="inputGroupFileAddon02">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    </div>
+                                                </div>
+
+                                                <p style="font-size: 12px">By clicking Sign Up, you agree to our Terms, Data Policy and
+                                                    Cookie Policy. You may
+                                                    receive SMS notifications from us and can opt out at any time.</p>
+                                                <div class="modal-footer">
+                                                    <div style="width: 100%; text-align: center">
+                                                        <button type="button" class="btn btn-success" id="btncreate">Create Account</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
                     <div id="Cars">
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="card mb-3 card-shadow">
+                                <div class="card-body card-height">
+                                    <h5 class="card-title" style="text-align: center">Admin dashboard - Car Details</h5>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="headers">
+                                <h4>Car Details</h4>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="text" class="form-control" placeholder="Brand" id="brand">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="number" class="form-control" placeholder="No of Passengers" id="passengers">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <select class="custom-select" id="cartype">
+                                    <option selected>Car Type</option>
+                                    <option value="1">General</option>
+                                    <option value="2">Premium</option>
+                                    <option value="3">Luxury</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <select class="custom-select" id="fueltype">
+                                    <option selected>Fual Type</option>
+                                    <option value="1">Petrol</option>
+                                    <option value="2">Diesel</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <select class="custom-select" id="transmisiontype">
+                                    <option selected>Transmission Type</option>
+                                    <option value="1">Gear</option>
+                                    <option value="2">Auto</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-4">
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Reg No" id="regno">
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <select class="custom-select" id="colour">
+                                    <option selected>Colour</option>
+                                    <option value="1">Red</option>
+                                    <option value="2">Green</option>
+                                    <option value="3">Black</option>
+                                    <option value="3">Orange</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Image" id="image">
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="headers">
+                                <h4>Rent Duration Prices</h4>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <input type="text" class="form-control" placeholder="Daily Rate" id="dailyrate">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <input type="text" class="form-control" placeholder="Monthly Rate" id="monthlyrate">
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="headers">
+                                <h4>Free Milage</h4>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Price" id="price">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Duration" id="duration">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <input type="text" class="form-control" placeholder="Price for extra KM" id="extrakm">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
+                                <input type="text" class="form-control" placeholder="Loss Damage Waiver" id="lossdamage">
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="btn-bottom" style="margin-right: 15px">
+                                <button type="button" class="btn btn-primary" id="savecar">Save</button>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-secondary">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="table-box" style="height: 250px; overflow: no-display">
+                                <div class="table-responsive-lg">
+                                    <table class="table table-hover">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Reg No</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">No of Passengers</th>
+                                            <th scope="col">Transmission</th>
+                                            <th scope="col">Car Type</th>
+                                            <th scope="col">Colour</th>
+                                            <th scope="col">Fuel Type</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblCarsBody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="Orders">

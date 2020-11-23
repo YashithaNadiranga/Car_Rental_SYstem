@@ -14,11 +14,10 @@ import java.util.Date;
 public class BookingDto {
     private String bookingID;
     private Date date;
-    private Date returnDate;
-    private int lastKM;
-    private double lossDamageWaiver;
+    private Date pickupDate;
     private String status;
     private String note;
+    private Date returnDate;
     private CustomerDto customerDto;
     private CarDto carDto;
     private DriverDto driverDto;

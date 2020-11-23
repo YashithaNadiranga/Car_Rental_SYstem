@@ -1,5 +1,6 @@
 package lk.ijse.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Car {
     private String freeMillageDuration;
 
     @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Booking> bookings = new ArrayList<>();
 
     @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)

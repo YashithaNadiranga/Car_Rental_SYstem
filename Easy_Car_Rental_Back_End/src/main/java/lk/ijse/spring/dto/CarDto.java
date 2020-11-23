@@ -20,6 +20,7 @@ public class CarDto {
     private String registrationNumber;
     private String colour;
     private double dailyRate;
+    private double lossDamageWaiver;
     private double monthlyRate;
     private double freeMillagePrice;
     private String freeMillageDuration;

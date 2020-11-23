@@ -42,7 +42,6 @@ $('#btncreate').click(()=>{
 $('#login').click(function () {
     let userName = $('#uname').val();
     let password = $('#password').val();
-
     if (userName == ""){
         alert('Enter User Name..!');
     }else if(password == ""){
@@ -53,11 +52,19 @@ $('#login').click(function () {
             url: 'http://localhost:8080/carRentalSystem/api/v1/customer/'+userName+'/'+password,
             success:function (res) {
                 if(res.message == 'customer'){
+                    document.cookie = "user="+res.data.name;
+                    document.cookie = "userID="+res.data.customerID;
+                    window.location.replace("CustomerDashboard.html");
+                }else if(res.message == 'driver'){
+                    document.cookie = "user="+res.data.name;
+                    document.cookie = "userID="+res.data.DriverID;
+                    localStorage.setItem('loggedUser', res);
+                    window.location.replace("DriverDashboard.html");
+                }else if(res.message == 'admin'){
+                    document.cookie = "user="+res.data.name;
+                    document.cookie = "userID="+res.data.AdminID;
                     localStorage.setItem('loggedUser', res);
                     window.location.replace("AdminDashboard.html");
-                }else if(res.message == 'driver'){
-                    localStorage.setItem('loggedUser', res);
-                    window.location.replace("driver.html");
                 }
             },
             error:function (ob, textStatus, error) {
@@ -67,3 +74,9 @@ $('#login').click(function () {
     }
 
 });
+
+function checkValidation() {
+    if($('#userName')!=""){
+
+    }
+}

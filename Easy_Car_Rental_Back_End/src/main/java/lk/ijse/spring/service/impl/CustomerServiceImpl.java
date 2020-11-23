@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -89,6 +90,19 @@ public class CustomerServiceImpl implements CustomerService {
             return null;
         }
         return mapper.map(customer,CustomerDto.class);
+    }
+
+    @Override
+    public void verifyCustomer(String id) {
+        Optional<Customer> customer = repo.findById(id);
+        if (customer.isPresent()) {
+            Customer customer1 = customer.get();
+            customer1.setVerified(1);
+            customer1.setCustomerID(id);
+            repo.save(customer1);
+        } else {
+            throw new RuntimeException("No Customer for id: " + id);
+        }
     }
 
 

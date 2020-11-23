@@ -1,5 +1,6 @@
 package lk.ijse.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Driver {
     private String password;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-    List<lk.ijse.spring.entity.Booking> bookings = new ArrayList<>();
+    @JsonIgnore
+    private List<lk.ijse.spring.entity.Booking> bookings = new ArrayList<>();
 
 }
