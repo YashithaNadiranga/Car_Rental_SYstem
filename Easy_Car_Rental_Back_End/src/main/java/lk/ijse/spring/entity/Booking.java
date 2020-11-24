@@ -29,7 +29,7 @@ public class Booking {
     @JoinColumn(name = "carid", referencedColumnName = "carID", nullable = false)
     private lk.ijse.spring.entity.Car car;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driverid", referencedColumnName = "driverID", nullable = false)
     private Driver driver;
 

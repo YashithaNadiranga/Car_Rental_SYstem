@@ -16,8 +16,8 @@ import java.util.List;
 public class Car {
     @Id
     private String carID;
-    private String Brand;
-    private String Type;
+    private String brands;
+    private String type;
     private int numberOfPassengers;
     private String transmissionType;
     private String fuelType;

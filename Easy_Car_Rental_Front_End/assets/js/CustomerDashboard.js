@@ -21,7 +21,7 @@ function deleteAllCookies() {
 }
 
 $('#user').text(getCookie('user'));
-
+loadAllCars();
 
 let btnarray = ['#btn-cust-home','#btn-cust-cars','#btn-cust-orders','#btn-cust-payments'];
 function setClass() {
@@ -32,13 +32,18 @@ function setClass() {
 
 $('#btn-cust-home').click(()=>{
     setClass();
+    hideall();
     $('#btn-cust-home').addClass('btn-custom-selected');
+    $('#Cust-Dashboard').fadeIn(1000);
 
 });
 
 $('#btn-cust-cars').click(()=>{
+    loadAllCars();
     setClass();
+    hideall();
     $('#btn-cust-cars').addClass('btn-custom-selected');
+    $('#All-cars').fadeIn(1000);
 
 });
 
@@ -61,12 +66,63 @@ $('#logout').click(()=>{
     }
 });
 
-let hide = ['#Dashboard','#Customers','#Cars'];
+$('#carsearch').click(()=>{
+    loadSearchCars();
+});
+
+let hide = ['#Cust-Dashboard','#All-cars'];
 
 function hideall(){
     for (let i in hide) {
         $(hide[i]).hide();
     }
 
+}
+
+function loadAllCars() {
+    $('#tblCar').empty();
+    $.ajax({
+        url: 'http://localhost:8080/carRentalSystem/api/v1/car',
+        method: 'GET',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let id = values[i].carID;
+                let brand = values[i].brands;
+                let passengers = values[i].numberOfPassengers;
+                let transmision = values[i].transmissionType;
+                let cartype = values[i].type;
+                let colour = values[i].colour;
+                let fuel = values[i].fuelType;
+
+                $('#tblCar').append(`<tr><th>${id}</th><td>${brand}</td><td>${passengers}</td><td>${transmision}</td><td>${cartype}</td><td>${colour}</td><td>${fuel}</td><td><button class="btn btn-secondary">View Image</button></td></tr>`)
+            }
+        }
+    });
+}
+
+function loadSearchCars() {
+    let tp = $('#carstype').find(":selected").text();
+    console.log(tp)
+    $('#tblCarSerch').empty();
+    $.ajax({
+        url: 'http://localhost:8080/carRentalSystem/api/v1/car/type/'+tp,
+        method: 'GET',
+        success: function (res) {
+            console.log(res);
+            let values = res.data;
+            for (i in values) {
+                let id = values[i].carID;
+                let brand = values[i].brands;
+                let passengers = values[i].numberOfPassengers;
+                let transmision = values[i].transmissionType;
+                let cartype = values[i].type;
+                let colour = values[i].colour;
+                let fuel = values[i].fuelType;
+
+                $('#tblCarSerch').append(`<tr><th>${id}</th><td>${brand}</td><td>${passengers}</td><td>${transmision}</td><td>${cartype}</td><td>${colour}</td><td>${fuel}</td><td><button class="btn btn-secondary">View Image</button></td></tr>`)
+            }
+        }
+    });
 }
 

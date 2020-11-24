@@ -28,10 +28,7 @@ public class DriverController {
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity addDriver(@RequestBody DriverDto dto){
         dto.setPassword(hashPassword(dto.getPassword()));
-
         driverService.saveDriver(dto);
-
-
         StandardResponse response = new StandardResponse(200, "Success", null);
         return new ResponseEntity(response, HttpStatus.CREATED);
     }

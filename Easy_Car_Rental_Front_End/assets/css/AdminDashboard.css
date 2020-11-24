@@ -1,10 +1,15 @@
 
 /*Loading*/
-
+#Dashboard{
+    /*display: none;*/
+}
 #Customers{
     display: none;
 }
 #Cars{
+    display: none;
+}
+#Drivers{
     display: none;
 }
 

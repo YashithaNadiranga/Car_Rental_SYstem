@@ -47,6 +47,13 @@ public class CarController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/type/{type}")
+    public ResponseEntity searchCarbytype(@PathVariable("type")String id){
+        List<CarDto> allSerchCars = carService.searchCarbyType(id);
+        StandardResponse response = new StandardResponse(200, "Success", allSerchCars);
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity getAllCars(){
         List<CarDto> allCars = carService.getAllCars();

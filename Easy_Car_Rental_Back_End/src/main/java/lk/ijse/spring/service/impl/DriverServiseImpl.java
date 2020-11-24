@@ -31,6 +31,7 @@ public class DriverServiseImpl implements DriverService {
     public void saveDriver(DriverDto dto) {
         Driver driver = mapper.map(dto, Driver.class);
         driver.setDriverID(getLastID());
+        System.out.println(dto.toString());
         driverRepo.save(driver);
     }
 

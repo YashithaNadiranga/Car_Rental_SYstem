@@ -207,7 +207,8 @@
                             <div class="btn-bottom">
                                 <hr>
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#exampleModalCenter" id="customerAdd">Add</button>
+                                        data-target="#exampleModalCenter" id="customerAdd">Add
+                                </button>
                                 <button type="button" class="btn btn-success">Update</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                                 <button type="button" class="btn btn-secondary">Clear</button>
@@ -257,13 +258,15 @@
 
                                                 <div class="form-group">
                                                     <label for="inputEmail">Email</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                                    <input type="email" class="form-control" id="inputEmail"
+                                                           placeholder="Email" required>
                                                 </div>
 
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="inputDrivingLicence">Driving Licence No</label>
-                                                        <input type="number" class="form-control" id="inputDrivingLicence"
+                                                        <input type="number" class="form-control"
+                                                               id="inputDrivingLicence"
                                                                placeholder="" required>
                                                     </div>
 
@@ -279,9 +282,11 @@
                                                         <span class="input-group-text" id="inputGroupFileAddon01">Upload NIC (Front)</span>
                                                     </div>
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                        <input type="file" class="custom-file-input"
+                                                               id="inputGroupFile01"
                                                                aria-describedby="inputGroupFileAddon01">
-                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                            file</label>
                                                     </div>
                                                 </div>
 
@@ -290,18 +295,23 @@
                                                         <span class="input-group-text" id="inputGroupFileAddon02">Upload NIC (Back)</span>
                                                     </div>
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                                        <input type="file" class="custom-file-input"
+                                                               id="inputGroupFile02"
                                                                aria-describedby="inputGroupFileAddon02">
-                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                        <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                            file</label>
                                                     </div>
                                                 </div>
 
-                                                <p style="font-size: 12px">By clicking Sign Up, you agree to our Terms, Data Policy and
+                                                <p style="font-size: 12px">By clicking Sign Up, you agree to our Terms,
+                                                    Data Policy and
                                                     Cookie Policy. You may
                                                     receive SMS notifications from us and can opt out at any time.</p>
                                                 <div class="modal-footer">
                                                     <div style="width: 100%; text-align: center">
-                                                        <button type="button" class="btn btn-success" id="btncreate">Create Account</button>
+                                                        <button type="button" class="btn btn-success" id="btncreate">
+                                                            Create Account
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -334,7 +344,8 @@
                                 <input type="text" class="form-control" placeholder="Brand" id="brand">
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-                                <input type="number" class="form-control" placeholder="No of Passengers" id="passengers">
+                                <input type="number" class="form-control" placeholder="No of Passengers"
+                                       id="passengers">
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
                                 <select class="custom-select" id="cartype">
@@ -412,14 +423,15 @@
                                 <input type="text" class="form-control" placeholder="Price for extra KM" id="extrakm">
                             </div>
                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3">
-                                <input type="text" class="form-control" placeholder="Loss Damage Waiver" id="lossdamage">
+                                <input type="text" class="form-control" placeholder="Loss Damage Waiver"
+                                       id="lossdamage">
                             </div>
                         </div>
 
                         <div class="row ml-0 mr-0 mt-3">
                             <div class="btn-bottom" style="margin-right: 15px">
                                 <button type="button" class="btn btn-primary" id="savecar">Save</button>
-                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-success" id="updatecar">Update</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                                 <button type="button" class="btn btn-secondary">Clear</button>
                             </div>
@@ -464,12 +476,79 @@
                     </div>
 
                     <div id="Drivers">
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="card mb-3 card-shadow">
+                                <div class="card-body card-height">
+                                    <h5 class="card-title" style="text-align: center">Admin dashboard - Driver
+                                        Details</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="headers">
+                                <h4>Driver Details</h4>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="text" class="form-control" placeholder="User Name" id="dusername">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="Password" class="form-control" placeholder="Password" id="dpassword">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="text" class="form-control" placeholder="Full Name" id="dfullname">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="text" class="form-control" placeholder="Contact No" id="dcontact">
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                                <input type="text" class="form-control" placeholder="NIC" id="NIC">
+                            </div>
+                        </div>
 
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="btn-bottom" style="margin-right: 15px">
+                                <button type="button" class="btn btn-primary" id="saveDriver">Save</button>
+                                <button type="button" class="btn btn-success" id="updateDriver">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-secondary">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="table-box" style="height: 250px; overflow: no-display">
+                                <div class="table-responsive-lg">
+                                    <table class="table table-hover">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Reg No</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">No of Passengers</th>
+                                            <th scope="col">Transmission</th>
+                                            <th scope="col">Car Type</th>
+                                            <th scope="col">Colour</th>
+                                            <th scope="col">Fuel Type</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblDriverBody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 

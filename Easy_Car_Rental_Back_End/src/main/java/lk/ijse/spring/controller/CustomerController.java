@@ -59,7 +59,7 @@ public class CustomerController {
                 StandardResponse response = new StandardResponse(200, "driver", driverDto);
                 return new ResponseEntity(response, HttpStatus.OK);
             }else{
-//                AdminDto adminDto = adminService.login(val1, val2);
+//                AdminDto adminDto1 = adminService.login(val1, val2);
                 if (adminDto != null){
                     adminDto.setPassword("");
                     StandardResponse response = new StandardResponse(200, "admin", adminDto);

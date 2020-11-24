@@ -5,6 +5,10 @@
     display: none;
 }
 
+#All-cars{
+    display: none;
+}
+
 
 
 /*Loading*/
@@ -137,4 +141,8 @@ body {
     background: #343A40;
     color: white;
     border-radius: 8px 8px 8px 8px;
+}
+
+.alert-custom{
+    display: none;
 }

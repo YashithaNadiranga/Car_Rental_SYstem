@@ -11,7 +11,7 @@ $('#btn-home').click(()=>{
     hideall();
     setClass();
     $('#btn-home').addClass('btn-custom-selected');
-    $('#Dashboard').fadeIn(1500);
+    $('#Dashboard').fadeIn(1000);
 
 });
 
@@ -21,7 +21,7 @@ $('#btn-customers').click(()=>{
     loadAllUnverifiedCustomers();
     loadAllCustomers();
     $('#btn-customers').addClass('btn-custom-selected');
-    $('#Customers').fadeIn(1500);
+    $('#Customers').fadeIn(1000);
 
 });
 
@@ -30,7 +30,7 @@ $('#btn-cars').click(()=>{
     setClass();
     loadAllCars();
     $('#btn-cars').addClass('btn-custom-selected');
-    $('#Cars').fadeIn(1500);
+    $('#Cars').fadeIn(1000);
 });
 
 $('#btn-orders').click(()=>{
@@ -56,6 +56,7 @@ $('#btn-drivers').click(()=>{
     hideall();
     setClass();
     $('#btn-drivers').addClass('btn-custom-selected');
+    $('#Drivers').fadeIn(1000);
 
 });
 
@@ -179,8 +180,8 @@ $('#savecar').click(()=>{
         url: "http://localhost:8080/carRentalSystem/api/v1/car",
         data:JSON.stringify({
             "carID":"",
-            "Brand":brand,
-            "Type": cartype,
+            "brands":brand,
+            "type": cartype,
             "numberOfPassengers": passengers,
             "transmissionType":transmision,
             "fuelType":fueltype,
@@ -198,6 +199,7 @@ $('#savecar').click(()=>{
             if(res.message=='Success'){
                 alert('Registration Successful');
                 loadAllCars();
+                $('#modal').modal('hide');
             }
         },
         error: function (ob, textStatus, error) {
@@ -219,7 +221,7 @@ function loadAllCars() {
             for (i in values) {
                     let id = values[i].carID;
                     let regno = values[i].registrationNumber;
-                    let brand = values[i].Brand;
+                    let brand = values[i].brands;
                     let passengers = values[i].numberOfPassengers;
                     let transmision = values[i].transmissionType;
                     let cartype = values[i].type;
@@ -231,4 +233,40 @@ function loadAllCars() {
         }
     });
 }
+
+$('#saveDriver').click(()=>{
+    let dusername = $('#dusername').val();
+    let dpassword = $('#dpassword').val();
+    let dname = $('#dfullname').val();
+    let dcontact = $('#dcontact').val();
+    let dnic = $('#NIC').val();
+
+    $.ajax({
+        method: "POST",
+        url: "http://localhost:8080/carRentalSystem/api/v1/driver",
+        data:JSON.stringify({
+            "driverID":"",
+            "name":dname,
+            "contactNo": dcontact,
+            "nic": dnic,
+            "userName":dusername,
+            "password":dpassword
+        }),
+        dataType:'Json',
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            if(res.message=='Success'){
+                alert('Registration Successful');
+                // loadAllDrivers();
+            }
+            console.log(res);
+        },
+        error: function (ob, textStatus, error) {
+            console.log("error from : " + ob + " " + textStatus + " " + error);
+            if(res.message!='Success'){
+                alert('Registration UnSuccessful! Try again');
+            }
+        }
+    });
+});
 

@@ -71,36 +71,88 @@
                                         <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Nic No</th>
-                                            <th scope="col">Driving Licence No</th>
-                                            <th scope="col">View Driving Licence</th>
-                                            <th scope="col">View NIC</th>
-                                            <th scope="col">Verify</th>
+                                            <th scope="col">Brand</th>
+                                            <th scope="col">No of Passengers</th>
+                                            <th scope="col">Transmission</th>
+                                            <th scope="col">Car Type</th>
+                                            <th scope="col">Colour</th>
+                                            <th scope="col">Fuel Type</th>
+                                            <th scope="col">Image</button></th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">C001</th>
-                                            <td>Yashitha Nadiranga</td>
-                                            <td>200025001088</td>
-                                            <td>123456789</td>
-                                            <td>
-                                                <button class="btn btn-secondary">View</button>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-secondary">View</button>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-success">Accept</button>
-                                            </td>
-                                        </tr>
+                                        <tbody id="tblCar">
 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div id="orders">
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="card mb-3 card-shadow">
+                                <div class="card-body card-height">
+                                    <h5 class="card-title" style="text-align: center">Customer Dashboard - Place
+                                        Order</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="alert alert-success alert-dismissible fade show alert-custom" role="alert"
+                                 style="width: 100%">
+                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0">
+                            <div class="card" style="width: 100%">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <select class="custom-select" id="carstype">
+                                                <option selected>Car Type</option>
+                                                <option value="1">General</option>
+                                                <option value="2">Premium</option>
+                                                <option value="3">Luxury</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <button class="btn btn-primary" id="carsearch"> Search</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="table-box" style="height: 250px; overflow: no-display">
+                                            <div class="table-responsive-lg">
+                                                <table class="table table-hover">
+                                                    <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Brand</th>
+                                                        <th scope="col">No of Passengers</th>
+                                                        <th scope="col">Transmission</th>
+                                                        <th scope="col">Car Type</th>
+                                                        <th scope="col">Colour</th>
+                                                        <th scope="col">Fuel Type</th>
+                                                        <th scope="col">Image</button></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tblCarSerch">
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

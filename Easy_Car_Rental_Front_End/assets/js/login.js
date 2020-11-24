@@ -62,7 +62,7 @@ $('#login').click(function () {
                     window.location.replace("DriverDashboard.html");
                 }else if(res.message == 'admin'){
                     document.cookie = "user="+res.data.name;
-                    document.cookie = "userID="+res.data.AdminID;
+                    document.cookie = "userID="+res.data.adminID;
                     localStorage.setItem('loggedUser', res);
                     window.location.replace("AdminDashboard.html");
                 }
