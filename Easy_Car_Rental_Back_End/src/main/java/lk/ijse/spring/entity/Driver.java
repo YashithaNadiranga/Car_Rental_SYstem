@@ -21,6 +21,8 @@ public class Driver {
     private String name;
     private String contactNo;
     private String nic;
+    @Column(nullable = false,columnDefinition = "TINYINT(1)")
+    private int available;
     private String userName;
     private String password;
 

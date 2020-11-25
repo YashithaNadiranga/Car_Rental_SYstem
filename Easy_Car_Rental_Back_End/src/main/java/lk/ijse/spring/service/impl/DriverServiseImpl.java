@@ -93,4 +93,21 @@ public class DriverServiseImpl implements DriverService {
 
         return mapper.map(driver,DriverDto.class);
     }
+
+    @Override
+    public DriverDto getRandomDriver() {
+        Driver randomDriver = driverRepo.getRandomDriver(true);
+        return mapper.map(randomDriver,DriverDto.class);
+    }
+
+    @Override
+    public void setAvailable(DriverDto dto) {
+        //            driverRepo.setAvailable(dto.getAvailable(),dto.getDriverID());
+        Optional<Driver> driver = driverRepo.findById(dto.getDriverID());
+        if (driver.isPresent()){
+            Driver driver1 = driver.get();
+            driver1.setAvailable(0);
+            driverRepo.save(driver1);
+        }
+    }
 }

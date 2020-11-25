@@ -14,10 +14,9 @@ import java.util.Date;
 public class Booking {
     @Id
     private String bookingID;
-    private Date date;
-    private Date returnDate;
-    private int lastKM;
-    private double lossDamageWaiver;
+    private String date;
+    private String pickdate;
+    private String returnDate;
     private String status;
     private String note;
 
@@ -35,4 +34,17 @@ public class Booking {
 
     @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
     private BookingReturn bookingReturn;
+
+    public Booking(String id,String date, String pick, String status, String note, String returnD, Customer cus, Car c, Driver d){
+        this.bookingID = id;
+        this.date = date;
+        this.pickdate = pick;
+        this.status = status;
+        this.note = note;
+        this.returnDate = returnD;
+        this.customer = cus;
+        this.car = c;
+        this.driver = d;
+
+    }
 }

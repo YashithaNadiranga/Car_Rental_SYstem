@@ -49,7 +49,9 @@ $('#btn-cust-cars').click(()=>{
 
 $('#btn-cust-orders').click(()=>{
     setClass();
+    hideall();
     $('#btn-cust-orders').addClass('btn-custom-selected');
+    $('#orders').fadeIn(1000);
 });
 
 $('#btn-cust-payments').click(()=>{
@@ -70,7 +72,7 @@ $('#carsearch').click(()=>{
     loadSearchCars();
 });
 
-let hide = ['#Cust-Dashboard','#All-cars'];
+let hide = ['#Cust-Dashboard','#All-cars','#orders'];
 
 function hideall(){
     for (let i in hide) {
@@ -103,13 +105,11 @@ function loadAllCars() {
 
 function loadSearchCars() {
     let tp = $('#carstype').find(":selected").text();
-    console.log(tp)
     $('#tblCarSerch').empty();
     $.ajax({
         url: 'http://localhost:8080/carRentalSystem/api/v1/car/type/'+tp,
         method: 'GET',
         success: function (res) {
-            console.log(res);
             let values = res.data;
             for (i in values) {
                 let id = values[i].carID;
@@ -121,8 +121,91 @@ function loadSearchCars() {
                 let fuel = values[i].fuelType;
 
                 $('#tblCarSerch').append(`<tr><th>${id}</th><td>${brand}</td><td>${passengers}</td><td>${transmision}</td><td>${cartype}</td><td>${colour}</td><td>${fuel}</td><td><button class="btn btn-secondary">View Image</button></td></tr>`)
+
+                $('#tblCarSerch tr').off('click');
+
+                $('#tblCarSerch tr').on('click', function () {
+                    let carid = $($(this).children().get(0)).text();
+                    $('#carid').val(carid);
+                });
             }
         }
     });
 }
+
+$('#placeorder').click(function () {
+
+    let val = getCookie('userID');
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '-' + dd + '-' + yyyy;
+
+    let pickupDate = $('#pickupdate').val();
+    let returnDate = $('#returndate').val();
+    let cusID = val;
+    let carID = $('#carid').val();
+    let driverID = $('#txtDriverID').val();
+
+    let customer;
+    let car;
+    let driver;
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/carRentalSystem/api/v1/customer/'+cusID,
+        async: false,
+        success: function (res) {
+            customer = res.data;
+        }
+    });
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/carRentalSystem/api/v1/car/'+carID,
+        async: false,
+        success: function (res) {
+            car = res.data;
+        }
+    });
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/carRentalSystem/api/v1/driver/stat/available',
+        async: false,
+        success: function (res) {
+            driver = res.data;
+        }
+    });
+
+    console.log(customer);
+    console.log(car);
+    console.log(driver);
+
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost:8080/carRentalSystem/api/v1/booking',
+        data: JSON.stringify({
+            "bookingID": "",
+            "date": today,
+            "pickdate": pickupDate,
+            "status": "Ordered",
+            "note": "normal",
+            "returnDate": returnDate,
+            "customerDto": customer,
+            "carDto": car,
+            "driverDto": driver
+        }),
+        async: false,
+        dataType: 'Json',
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            if (res.message == 'Success'){
+                alert('Booking successFul..!');
+            }
+        }
+    });
+});
 

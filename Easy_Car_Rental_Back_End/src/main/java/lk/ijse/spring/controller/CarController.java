@@ -41,7 +41,7 @@ public class CarController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity searchCar(String id){
+    public ResponseEntity searchCar(@PathVariable("id")String id){
         CarDto carDto = carService.searchCar(id);
         StandardResponse response = new StandardResponse(200, "Success", carDto);
         return new ResponseEntity(response, HttpStatus.OK);

@@ -13,11 +13,11 @@ import java.util.Date;
 @ToString
 public class BookingDto {
     private String bookingID;
-    private Date date;
-    private Date pickupDate;
+    private String date;
+    private String pickdate;
     private String status;
     private String note;
-    private Date returnDate;
+    private String  returnDate;
     private CustomerDto customerDto;
     private CarDto carDto;
     private DriverDto driverDto;

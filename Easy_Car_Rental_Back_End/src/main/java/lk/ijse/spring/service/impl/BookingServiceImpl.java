@@ -39,7 +39,19 @@ public class BookingServiceImpl implements BookingService {
     public void saveBooking(BookingDto dto) {
         Booking booking = modelMapper.map(dto, Booking.class);
         booking.setBookingID(getLastID());
-        bookingRepo.save(booking);
+
+        Booking booking1 = new Booking(
+                booking.getBookingID(),
+                booking.getDate(),
+                booking.getPickdate(),
+                booking.getReturnDate(),
+                booking.getStatus(),
+                booking.getNote(),
+                booking.getCustomer(),
+                booking.getCar(),
+                booking.getDriver()
+        );
+        bookingRepo.save(booking1);
     }
 
     @Override

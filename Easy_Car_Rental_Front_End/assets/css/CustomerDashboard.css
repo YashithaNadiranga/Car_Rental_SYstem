@@ -2,10 +2,16 @@
 /*Loading*/
 
 #Cust-Dashboard {
-    display: none;
+    /*display: none;*/
 }
 
 #All-cars{
+    display: none;
+}
+#Drivers{
+    display: none;
+}
+#orders{
     display: none;
 }
 

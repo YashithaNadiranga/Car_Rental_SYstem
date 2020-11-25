@@ -12,4 +12,6 @@ public interface DriverService {
     List<DriverDto> getAllDrivers();
     String getLastID();
     DriverDto login(String userName, String password);
+    void setAvailable(DriverDto dto);
+    DriverDto getRandomDriver();
 }

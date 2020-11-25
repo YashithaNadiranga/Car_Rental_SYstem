@@ -55,12 +55,17 @@ $('#btn-reports').click(()=>{
 $('#btn-drivers').click(()=>{
     hideall();
     setClass();
+    loadAllDrivers();
     $('#btn-drivers').addClass('btn-custom-selected');
     $('#Drivers').fadeIn(1000);
 
 });
 
-let hide = ['#Dashboard','#Customers','#Cars'];
+$('#cleardriver').click(()=>{
+    cleardriverfields();
+});
+
+let hide = ['#Dashboard','#Customers','#Cars','#Drivers'];
 
 function hideall(){
     for (let i in hide) {
@@ -191,7 +196,8 @@ $('#savecar').click(()=>{
             "dailyRate":dailyrate,
             "monthlyRate":monthlyrate,
             "freeMillagePrice":price,
-            "freeMillageDuration":duration
+            "freeMillageDuration":duration,
+            "lossDamageWaiver":lossdamage
         }),
         dataType:'Json',
         contentType: "application/json; charset=utf-8",
@@ -257,7 +263,7 @@ $('#saveDriver').click(()=>{
         success: function (res) {
             if(res.message=='Success'){
                 alert('Registration Successful');
-                // loadAllDrivers();
+                loadAllDrivers();
             }
             console.log(res);
         },
@@ -269,4 +275,44 @@ $('#saveDriver').click(()=>{
         }
     });
 });
+
+function loadAllDrivers() {
+    $('#tblDriverBody').empty();
+    $.ajax({
+        url: 'http://localhost:8080/carRentalSystem/api/v1/driver',
+        method: 'GET',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let id = values[i].driverID;
+                let username = values[i].userName;
+                let name = values[i].name;
+                let nic = values[i].nic;
+                let contactno = values[i].contactNo;
+                $('#tblDriverBody').append(`<tr><th>${id}</th><td>${username}</td><td>${name}</td><td>${nic}</td><td>${contactno}</td></tr>`);
+                $('#tblDriverBody tr').off('click');
+
+                $('#tblDriverBody tr').on('click', function () {
+                    let username = $($(this).children().get(1)).text();
+                    let name = $($(this).children().get(2)).text();
+                    let nic = $($(this).children().get(3)).text();
+                    let contactno = $($(this).children().get(4)).text();
+                    $('#dusername').val(username);
+                    $('#dfullname').val(name);
+                    $('#NIC').val(nic);
+                    $('#dcontact').val(contactno);
+                });
+            }
+        }
+    });
+}
+
+function cleardriverfields() {
+    $('#dusername').val("");
+    $('#dfullname').val("");
+    $('#NIC').val("");
+    $('#dcontact').val("");
+}
+
+
 

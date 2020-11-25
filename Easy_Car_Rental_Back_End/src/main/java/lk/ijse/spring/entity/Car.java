@@ -26,6 +26,7 @@ public class Car {
     private String colour;
     private double dailyRate;
     private double monthlyRate;
+    private double lossDamageWaiver;
     private double freeMillagePrice;
     private String freeMillageDuration;
 
