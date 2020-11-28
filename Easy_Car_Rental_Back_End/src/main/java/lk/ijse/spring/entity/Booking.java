@@ -16,9 +16,10 @@ public class Booking {
     private String bookingID;
     private String date;
     private String pickdate;
-    private String returnDate;
     private String status;
     private String note;
+    private String returnDate;
+
 
     @ManyToOne
     @JoinColumn(name = "cusID", referencedColumnName = "customerID", nullable = false)

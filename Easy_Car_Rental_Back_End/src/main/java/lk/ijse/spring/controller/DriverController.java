@@ -64,8 +64,6 @@ public class DriverController {
     @GetMapping(path = "/{stat}/available")
     public ResponseEntity getAvailableDriver(){
         DriverDto randomDriver = driverService.getRandomDriver();
-        randomDriver.setPassword("");
-        randomDriver.setUserName("");
         StandardResponse response = new StandardResponse(200, "Success", randomDriver);
         return new ResponseEntity(response, HttpStatus.OK);
     }

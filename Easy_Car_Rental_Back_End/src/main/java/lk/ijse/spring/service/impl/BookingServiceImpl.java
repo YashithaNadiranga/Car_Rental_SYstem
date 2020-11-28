@@ -1,7 +1,13 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.BookingDto;
+import lk.ijse.spring.dto.CarDto;
+import lk.ijse.spring.dto.CustomerDto;
+import lk.ijse.spring.dto.DriverDto;
 import lk.ijse.spring.entity.Booking;
+import lk.ijse.spring.entity.Car;
+import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.BookingRepo;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.repo.CustomerRepo;
@@ -13,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,9 +51,9 @@ public class BookingServiceImpl implements BookingService {
                 booking.getBookingID(),
                 booking.getDate(),
                 booking.getPickdate(),
-                booking.getReturnDate(),
                 booking.getStatus(),
                 booking.getNote(),
+                booking.getReturnDate(),
                 booking.getCustomer(),
                 booking.getCar(),
                 booking.getDriver()
@@ -85,7 +92,28 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public List<BookingDto> getAllBooking() {
         List<Booking> bookings = bookingRepo.findAll();
-        return modelMapper.map(bookings, new TypeToken<List<BookingDto>>(){}.getType());
+        List<BookingDto> bookingDtos = new ArrayList<>();
+
+        for (Booking b : bookings) {
+            Customer customer = b.getCustomer();
+            Car car = b.getCar();
+            Driver driver = b.getDriver();
+
+            CustomerDto customer1 = modelMapper.map(customer, CustomerDto.class);
+            CarDto car1 = modelMapper.map(car, CarDto.class);
+            DriverDto driver1 = modelMapper.map(driver, DriverDto.class);
+
+            BookingDto dto = modelMapper.map(b,BookingDto.class);
+            dto.setCustomerDto(customer1);
+            dto.setCarDto(car1);
+            dto.setDriverDto(driver1);
+
+            bookingDtos.add(dto);
+
+        }
+
+//        return modelMapper.map(bookings, new TypeToken<List<BookingDto>>(){}.getType());
+        return bookingDtos;
     }
 
     @Override

@@ -16,4 +16,5 @@ public class DriverDto {
     private String nic;
     private String userName;
     private String password;
+    private int available;
 }

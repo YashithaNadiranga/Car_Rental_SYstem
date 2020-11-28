@@ -23,10 +23,11 @@
                     <button class="btn-hover l-pnl-btn btn-custom btn-custom-selected" id="btn-home">Dashboard</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-customers">Customers</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-cars">Cars</button>
+                    <button class="btn-hover l-pnl-btn btn-custom" id="btn-drivers">Drivers</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-orders">Orders</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-payments">Payments</button>
                     <button class="btn-hover l-pnl-btn btn-custom" id="btn-reports">Reports</button>
-                    <button class="btn-hover l-pnl-btn btn-custom" id="btn-drivers">Drivers</button>
+
                 </div>
             </div>
         </div>
@@ -57,7 +58,7 @@
                                                 <div class="banner-card" style="background: #FF7034 ">
                                                     <div style="margin-left: 10px">
                                                         <pa>No Of Customers</pa>
-                                                        <h3>0</h3>
+                                                        <h3 id="noofcust">0</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -66,7 +67,7 @@
                                                 <div class="banner-card" style="background: #FE4B4B">
                                                     <div style="margin-left: 10px">
                                                         <pa>Non Verified Customers</pa>
-                                                        <h3>0</h3>
+                                                        <h3 id="noofuncust">0</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +76,7 @@
                                                 <div class="banner-card-2" style="background: #08AD6A">
                                                     <div style="margin-left: 10px">
                                                         <pa>Verified Customers</pa>
-                                                        <h3>0</h3>
+                                                        <h3 id="noofvecust">0</h3>
                                                     </div>
                                                 </div>
                                                 <div class="banner-card-2" style="margin-top: 10px;background: #CD4040">
@@ -102,7 +103,7 @@
                                                 <div class="banner-card" style="background: #FE4B4B">
                                                     <div style="margin-left: 10px">
                                                         <pa>No Of Drivers</pa>
-                                                        <h3>0</h3>
+                                                        <h3 id="nooddeivers">0</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,7 +112,7 @@
                                                 <div class="banner-card-2" style="background: #08AD6A">
                                                     <div style="margin-left: 10px">
                                                         <pa>Verified Drivers</pa>
-                                                        <h3>0</h3>
+                                                        <h3 id="noofverifyeddeivers">0</h3>
                                                     </div>
                                                 </div>
                                                 <div class="banner-card-2"
@@ -464,6 +465,46 @@
                     </div>
 
                     <div id="Orders">
+                        <div class="row ml-0 mr-0 mt-2">
+                            <div class="card mb-3 card-shadow">
+                                <div class="card-body card-height">
+                                    <h5 class="card-title" style="text-align: center">Admin dashboard - Order Details</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="headers">
+                                <h4>Order Details</h4>
+                            </div>
+                        </div>
+
+                        <div class="row ml-0 mr-0 mt-3">
+                            <div class="table-box" style="height: 250px; overflow: no-display">
+                                <div class="table-responsive-lg">
+                                    <table class="table table-hover">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">BookingID</th>
+                                            <th scope="col">Order Date</th>
+                                            <th scope="col">Notes</th>
+                                            <th scope="col">PickUp Date</th>
+                                            <th scope="col">Return Date</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Car ID</th>
+                                            <th scope="col">Customer ID</th>
+                                            <th scope="col">Driver ID</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tblOrdersBody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
 
